@@ -16,6 +16,19 @@ http.createServer(function(req, res) {
   request.get(userAgentURL, function (err, xhr, body) {
     var jso= JSON.parse(body);
     var result = jso.agent_name + ' ' + jso.agent_version;
-    console.log(result);
+    // console.log(result);
+  });
+
+  request.get('http://caniuse.com/flexbox', function (err, xhr, body) {
+    // var char = cheerio.find('chrome');
+    // console.log(body);
+    var $ = cheerio.load(body);
+    var browser = $(body).find('.browser--chrome').next().children().each(function () {
+      if($(this).text() == "44") {
+        console.log($(this).attr('title'))
+      }
+    });
+    // console.log(browser);
   })
+
 }).listen(2500);
