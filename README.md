@@ -35,4 +35,4 @@ NPM, Node.js, Mocha, Chai, Cheerio, and Request.
 
 *Go to this url in the browser:*
 
->localhost:2500
+>http://localhost:2500
